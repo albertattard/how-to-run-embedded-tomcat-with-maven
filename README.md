@@ -16,7 +16,7 @@ Maven has a tomcat plugin that allows us to run an embedded tomcat instance with
 Please note that this example makes use version 7 of Tomcat.  Please update where necessary if using another version of Tomcat.
 
 
-All code listed below is available at: <a href="http://java-creed-examples.googlecode.com/svn/maven/How%20To%20Run%20Embedded%20Tomcat%20with%20Maven/" target="_blank">http://java-creed-examples.googlecode.com/svn/maven/How To Run Embedded Tomcat with Maven/</a>.  Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from the above link.
+Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from the above link.
 
 
 Include the Tomcat Maven Plugin as shown in the following POM example.
