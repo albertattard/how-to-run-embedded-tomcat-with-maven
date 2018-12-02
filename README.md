@@ -12,9 +12,23 @@ Maven has a tomcat plugin that allows us to run an embedded tomcat instance with
 
 Please note that this example makes use version 7 of Tomcat.  Please update where necessary if using another version of Tomcat.
 
-Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from the above link.
+Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from [https://github.com/javacreed/how-to-run-embedded-tomcat-with-maven](https://github.com/javacreed/how-to-run-embedded-tomcat-with-maven).
 
 Include the Tomcat Maven Plugin as shown in the following POM example.
+
+```xml
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <port>9090</port>
+          <path>/</path>
+        </configuration>
+      </plugin>
+```
+
+The full XML is shown next for completeness
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -61,6 +75,7 @@ Include the Tomcat Maven Plugin as shown in the following POM example.
     <jacoco.version>0.7.9</jacoco.version>
     <reports.version>2.9</reports.version>
     <servlet.api.version>4.0.1</servlet.api.version>
+    <tomcat.version>2.2</tomcat.version>
   </properties>
 
   <dependencies>
@@ -76,6 +91,16 @@ Include the Tomcat Maven Plugin as shown in the following POM example.
     <defaultGoal>clean install site versions:display-dependency-updates</defaultGoal>
 
     <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>${tomcat.version}</version>
+        <configuration>
+          <port>9090</port>
+          <path>/</path>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -161,8 +186,7 @@ Include the Tomcat Maven Plugin as shown in the following POM example.
       </plugin>
     </plugins>
   </reporting>
-</project>
-```
+</project>```
 
 Please note that the above configuration will start the embedded Tomcat instance on port `9090`.  You can change the port as required.
 
