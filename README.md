@@ -186,7 +186,8 @@ The full XML is shown next for completeness
       </plugin>
     </plugins>
   </reporting>
-</project>```
+</project>
+```
 
 Please note that the above configuration will start the embedded Tomcat instance on port `9090`.  You can change the port as required.
 
